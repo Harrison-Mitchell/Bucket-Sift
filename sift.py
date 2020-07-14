@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import urllib3
 from os import name
 from sys import argv
 from time import sleep
@@ -30,6 +31,8 @@ url = argv[1].strip("/")
 url = "http://" + url if url[:4] != "http" else url
 # Prime the pump with the first bucket page's URL
 pageURL = url
+# Shhhhhhhhhhhh
+urllib3.disable_warnings()
 
 # Helper function to print bold (if on *nix) or return bold string
 def printB (s, r=0):
